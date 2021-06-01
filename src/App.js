@@ -1,24 +1,24 @@
-// import logo from "./logo.svg";
 import "./App.css"
 import React from 'react'
-import Form from './Componentes/Form/Form'
-import Footer from './Componentes/Footer/Footer'
+import Contato from './Componentes/Contato/Contato'
 import Header from './Componentes/Header/Header'
 import Drinks from './Componentes/Drinks/Drinks'
-import Contatos from './Componentes/Contatos/Contatos'
+import Home from './Componentes/Home/Home'
+import SobreNos from './Componentes/SobreNos/SobreNos'
+import NossoTime from './Componentes/NossoTime/NossoTime'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 function App() {
-  
     return (
       <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path='/formulario' component={Form} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/contato' component={Contato} />
         <Route exact path='/drinks' component={Drinks} />
-        <Route exact path='/contato/*' component={Contatos} />
+        <Route exact path='/sobrenos' component={SobreNos} />
+        <Route exact path='/nossotime' component={NossoTime} />
       </Switch>
-      <Footer /> 
       </BrowserRouter>
     )
 }

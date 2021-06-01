@@ -3,3 +3,16 @@
     height: 12vh;
     width: 100%;
 }
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    height: 12vh;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+.container {
+    background: url('../../imgs/bg-bons-drinks.jpg');
+    height: 100vh;
+}
+
+.section {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.text {
+    background-color: white;
+    width: 40vw;
+}

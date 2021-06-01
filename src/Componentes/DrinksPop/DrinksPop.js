@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function DrinksPop() {
+const DrinksPop = () => {
     return (
-        <div>
-            <h1> DEU CERTO! </h1>
-        </div>
+        <h1> DEU CERTO! </h1>
     )
 }
+
+export default DrinksPop

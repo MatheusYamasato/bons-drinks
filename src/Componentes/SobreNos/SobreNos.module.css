@@ -1,0 +1,21 @@
+.titulo {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "imagem texto";
+}
+
+.itemA {
+    grid-area: imagem;
+}
+
+.itemB {
+    grid-area: texto;
+}
+
+.sobre {
+    margin-right: 10px;
+}

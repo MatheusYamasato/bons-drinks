@@ -1,0 +1,36 @@
+.titulo {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: "imagem formulario";
+    justify-content: space-around;
+}
+
+.contimg {
+    grid-area: imagem;
+}
+
+.formulario {
+    padding-top: 10vh;
+    display: grid;
+    justify-items: center;
+    font-family: Tahoma;
+    row-gap: 20px;
+    grid-area: formulario;
+}
+
+.labelText {
+    display: grid;
+    row-gap: 20px;
+}
+
+.textarea {
+    height: 15vh;
+}
+
+.btn {
+    padding: 10px;
+    cursor: pointer;
+}

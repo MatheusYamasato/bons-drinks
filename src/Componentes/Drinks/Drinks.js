@@ -1,45 +1,37 @@
-import React, {useEffect, useState} from 'react'
-import {BrowserRouter as Routes, Route, Link, Switch} from 'react-router-dom'
+import React from 'react'
+import {Route, Link, Switch, BrowserRouter} from 'react-router-dom'
 import BuscaDrinks from '../BuscaDrinks/BuscaDrinks'
 import DrinksPop from '../DrinksPop/DrinksPop'
+import style from './Drinks.module.css'
+import useFetch from '../../hooks/useFetch'
 
 const Drinks = () =>  {
 
-    const minhaRef = React.useRef(null)
-
-    const trocaDeCor = (e) => {
-        minhaRef.current.style.color === 'black' ? minhaRef.current.style.color = 'red' : minhaRef.current.style.color = 'black'
-    }
-
-    // const trocaDeNovo = (e) => {
-    //     minhaRef.current.style.color = 'red' ? 'black' : 'black'
-    // }
-  
-    const [request, setRequest] = useState({})
-    useEffect(() => {
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-            .then(res => res.json())
-            .then(data => data.drinks[0])
-            .then(drink => setRequest(drink))
-    }, [])
-
+    const bebidas = useFetch()
         return (
-            <main>
-                <Link to="/drinks/drinkspop"> Pop </Link> 
-                <Link to="/drinks/buscadrinks">Buscar</Link>
-                <Routes>
-                    <Switch> 
-                        <Route exact path="/drinks/drinkspop"element={<DrinksPop /> } /> 
-                        <Route exact path="/drinks/buscadrinks" element={<BuscaDrinks /> } />
-                    </Switch>
-                </Routes>
-                <ul>
-                    <p ref={minhaRef} onMouseEnter={trocaDeCor}>ID: {request.idDrink}</p>
-                    <p>Nome: {request.strDrink}</p>
-                    <img src={request.strDrinkThumb} alt="Drink" />
-                </ul>
-            </main>
+            <div class={style.container}>
+                
+                <BrowserRouter> 
+                <Link to="/drinks/drinkspop" className={style.link} >Populares</Link> 
+                <Link to="/drinks/buscadrinks" className={style.link} >Buscar</Link>
+                <Switch> 
+                    <Route exact path="/drinks/drinkspop" component={DrinksPop} />  
+                    <Route exact path="/drinks/buscadrinks" component={BuscaDrinks} />
+                </Switch>
+                    
+                </BrowserRouter>
+                <div> 
+                
+                    {bebidas.map(bebida => (
+                        <ul>
+                            <p>ID: {bebida.idDrink}</p>
+                            <p>Nome: {bebida.strDrink}</p>
+                            <img src={bebida.strDrinkThumb} alt="Drink" />
+                        </ul>
+                    ))}
+                </div>
+            </div>
         )
 }
 
-export default Drinks;
+export default Drinks

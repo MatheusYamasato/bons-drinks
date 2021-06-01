@@ -1,11 +1,8 @@
 import React from 'react'
 
 const BuscaDrinks = () =>  {
-    
-    return (
-        <div>
-            <h1> Olá!!!!! </h1>
-        </div>
+    return ( 
+        <h1> TESTE </h1> 
     )
 }
 
