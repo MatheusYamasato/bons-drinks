@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useFetch} from '../../hooks/useFetch'
+import style from './BuscaDrinks.module.css'
 
 const BuscaDrinks = () =>  {
 
@@ -16,11 +17,12 @@ const BuscaDrinks = () =>  {
     }
 
     return (
-        <div>
+        <div className={style.container}>
             <label></label>
             <input onChange={GetValor}></input>
             <button onClick={Search}>Buscar</button>
-            <img src={drinks.strDrinkThumb}/>
+            <img className={style.img} src={drinks.strDrinkThumb}/>
+            <p>{drinks.strDrink}</p>
         </div>
     )
     
