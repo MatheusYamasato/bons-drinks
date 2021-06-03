@@ -1,10 +1,15 @@
 .container {
     display: grid;
     justify-content: center;
+    grid-template-areas: "populares buscar";
 }
 
 .link {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    background-color: brown;
+    border-radius: 2px;
+    padding: 10px;
+
 }

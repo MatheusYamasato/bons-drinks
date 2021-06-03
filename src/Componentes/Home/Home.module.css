@@ -1,5 +1,5 @@
 .container {
-    background: url('../../imgs/bg-bons-drinks.jpg');
+    background: url('../../imgs/bg-bons-drinks.jpg') no-repeat;
     height: 100vh;
 }
 

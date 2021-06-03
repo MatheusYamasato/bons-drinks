@@ -1,0 +1,37 @@
+.titulo {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: "imagem1 imagem2 imagem3";
+    justify-items: center;
+}
+
+.divPai {
+    justify-content: center;
+}
+
+.img1 {
+    height: 200px;
+    grid-area: imagem1;
+}
+
+.img2 {
+    height: 200px;
+    grid-area: imagem2;
+}
+
+.img3 {
+    height: 200px;
+    grid-area: imagem3;
+}
+
+.nome {
+    text-align: center;
+}
+
+.paragrafo {
+    text-align: center;
+    width: 50%;
+}

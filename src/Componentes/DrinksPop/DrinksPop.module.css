@@ -1,0 +1,14 @@
+.container {
+    display: grid;
+    grid-template-areas: "um dois tres";
+    justify-content: center;
+    gap: 20px 20px;
+}
+
+.divPai {
+    border: 2px solid black;
+}
+
+.img {
+    height: 40vh;
+}

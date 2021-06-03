@@ -1,17 +1,5 @@
-import { useEffect, useState } from 'react'
-
-const useFetch = () => {
-    const [drinks, setDrinks] = useState([])
-
-    useEffect(() => {
-        const buscarInfo = async () => {
-            const dados = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-            const resposta = await dados.json()
-            setDrinks(resposta.drinks)
-        }
-        buscarInfo()
-    }, [])
-    return drinks
+export const useFetch = async (drink) => {
+    const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
+    const data = await response.json()
+    return data
 }
-
-export default useFetch
